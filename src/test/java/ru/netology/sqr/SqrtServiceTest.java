@@ -9,18 +9,21 @@ public class SqrtServiceTest {
 
     @ParameterizedTest
   //      @CsvSource({
-  //      "10000,3000,20000, true",
-  //      "100000,60000,150000, false"
+  //      "10,99,90,
+  //      "120,220,90,
+    //    "500,1000,90,
+
   //})
     @CsvFileSource(resources = "/params.csv")
 
 
-    public void testRegisteredUnderLimit (int expected, int income, int expenses, int threshold) {
+    public void testRegisteredUnderLimit (int firstNum, int secondNum) {
+
         SqrtService service = new SqrtService();
 
-        int actual = service.calculateSqrtService(income, expenses, threshold);
+        int quantity = service.calculateSqrtService (firstNum, secondNum);
 
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(firstNum, secondNum, quantity);
     }
 }
 

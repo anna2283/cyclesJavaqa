@@ -1,19 +1,16 @@
 package ru.netology.sqr;
 
 public class SqrtService {
-    public int calculateSqrtService(int income, int expenses, int threshold) {
-        int money = 0; //количество денег
-        int count = 0; // счётчик месяцев отдыха
-        for (int i = 0; i < 12; i++) {
-            if (money >= threshold) { // отдыхаем
-                money = (money - expenses) / 3;
-                count++; // увеличиваем счётчик месяцев отдыха
-            } else { // работаем
-                money = money - expenses + income;
+    public int calculateSqrtService(int firstNum, int secondNum) {
+        int max = 99;
+        int quantity = 0;
+
+        for (int i = firstNum; i <= secondNum; i++) {
+            if (firstNum <= i * i && i * i <= secondNum) ;
+            {
+                quantity = quantity + 1;
             }
         }
-        return count;
+        return quantity;
     }
 }
-
-
